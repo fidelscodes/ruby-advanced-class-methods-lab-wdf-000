@@ -1,7 +1,5 @@
 require "pry"
 
-# TODO: remove all comments before pushing
-
 class Song
   attr_accessor :name, :artist_name
   @@all = []
@@ -24,10 +22,9 @@ class Song
     song.name = name
     song
 
-    # why doesn't this work?
-    # self.new.name = name
-    # self.name
-    # binding.pry
+    # why doesn't this work? # self.name = "Song" which is name of class
+    # self.new.name = name # .name is a built-in class method
+    # self.name #=> 'Song'
   end
 
   def self.create_by_name(name)
@@ -61,7 +58,6 @@ class Song
     song.name = song_info[1]
     song.artist_name = song_info[0]
     song
-    # binding.pry
   end
 
   def self.create_from_filename(filename)
@@ -73,5 +69,4 @@ class Song
     self.all.clear
   end
 
-# binding.pry
 end
